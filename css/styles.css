@@ -241,6 +241,8 @@ img {
   margin: 0 auto;
   padding: 1.5rem 1.5rem 2.5rem;
   padding-bottom: calc(1.5rem + 1.5rem + 24px); /* account for fixed footer height */
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /* ---------- Loading ---------- */
