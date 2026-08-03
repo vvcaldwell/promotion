@@ -801,23 +801,23 @@ sections:
             link: material/lettersOfSupport/LoS-TraciBitondo-for-VladVeksler.pdf
           - title: Victoria Swanson
             link: material/lettersOfSupport/LoS-VictoriaSwanson-for-VladVeksler.pdf
-          - title: Cagla Yildirim
-            link: material/lettersOfSupport/LoS-CaglaYildirim-for-VladVeksler.pdf
-          - title: Kate Solomon
-            link: material/lettersOfSupport/LoS-KateSolomon-for-VladVeksler.pdf
-          - title: Sal Ferraro
-            link: material/lettersOfSupport/LoS-SalFerraro-for-VladVeksler.pdf
-          - title: Lily Tsoi
-            link: material/lettersOfSupport/LoS-LilyTsoi-for-VladVeksler.pdf
-      - type: links
-        title: Letters of Support from Former Students
-        content: 
-          - title: Nathan Ayele
-            link: material/lettersOfSupport/LoS-NathanAyele.pdf
-          - title: Jannice Salazar
-            link: material/lettersOfSupport/LoS-JanniceSalazar.pdf
-          - title: Vidur Khanal
-            link: material/lettersOfSupport/LoS-VidurKhanal.pdf
-          - title: Sangit Manandhar
-            link: material/lettersOfSupport/LoS-SangitManandhar.pdf
+      #     - title: Cagla Yildirim
+      #       link: material/lettersOfSupport/LoS-CaglaYildirim-for-VladVeksler.pdf
+      #     - title: Kate Solomon
+      #       link: material/lettersOfSupport/LoS-KateSolomon-for-VladVeksler.pdf
+      #     - title: Sal Ferraro
+      #       link: material/lettersOfSupport/LoS-SalFerraro-for-VladVeksler.pdf
+      #     - title: Lily Tsoi
+      #       link: material/lettersOfSupport/LoS-LilyTsoi-for-VladVeksler.pdf
+      # - type: links
+      #   title: Letters of Support from Former Students
+      #   content: 
+      #     - title: Nathan Ayele
+      #       link: material/lettersOfSupport/LoS-NathanAyele.pdf
+      #     - title: Jannice Salazar
+      #       link: material/lettersOfSupport/LoS-JanniceSalazar.pdf
+      #     - title: Vidur Khanal
+      #       link: material/lettersOfSupport/LoS-VidurKhanal.pdf
+      #     - title: Sangit Manandhar
+      #       link: material/lettersOfSupport/LoS-SangitManandhar.pdf
 
