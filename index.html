@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading…</title>
+  <meta name="description" content="Faculty Advancement Portfolio">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Top Header Bar -->
+    <header class="header">
+      <div class="header-container">
+        <div class="header-brand">
+          <img class="sidebar-logo" data-bind="logo" alt="">
+          <div class="brand-text">
+            <span class="sidebar-name" data-bind="title"></span>
+            <p data-bind="subtitle"></p>
+          </div>
+        </div>
+        <div class="nav-wrapper">
+          <nav id="nav-bar" class="nav-bar">
+            <!-- Populated by JS from YAML Sections -->
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="content" id="content">
+      <!-- Loading state -->
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p data-bind="loading"></p>
+      </div>
+      <!-- Content populated by JS -->
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-container" id="footer-content"></div>
+  </footer>
+
+  <div id="preview-modal" class="modal-overlay" style="display:none">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-container">
+      <div class="modal-body" id="modal-preview"></div>
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="modal-download">Download</button>
+        <button class="btn" id="modal-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/js-yaml.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
