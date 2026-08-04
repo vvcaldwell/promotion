@@ -429,6 +429,7 @@ img {
 .badge {
   display: inline-flex;
   align-items: center;
+  text-align: center;
   padding: 4px 12px;
   background: var(--caldwell-red-subtle);
   color: var(--caldwell-red);

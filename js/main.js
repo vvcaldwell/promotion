@@ -1,7 +1,9 @@
 'use strict';
+
 /* ==========================================================================
-Dr. Vladislav D. Veksler - Faculty Advancement Portfolio
-SPA JavaScript — YAML-driven content renderer with marked.js
+Faculty Advancement Portfolio
+YAML-driven content renderer
+Author: V. D. Veksler
 ========================================================================== */
 
 (function () {
@@ -44,7 +46,7 @@ SPA JavaScript — YAML-driven content renderer with marked.js
   /* ---------- Apply Config to Page ---------- */
   function applyConfig() {
     var cfg = getConfig();
-
+    
     /* Tab title */
     document.title = cfg['site name'] || cfg['site-name'] || cfg.title || 'Faculty Advancement Portfolio';
 
@@ -52,6 +54,13 @@ SPA JavaScript — YAML-driven content renderer with marked.js
     var metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute('content', cfg['site description'] || cfg['site-description'] || document.title);
+    }
+
+    /* CSS */
+    if (cfg.style) {
+      const styleElement = document.createElement('style');
+      styleElement.textContent = cfg.style;
+      document.head.appendChild(styleElement);
     }
 
     /* Site Header */
@@ -106,7 +115,7 @@ SPA JavaScript — YAML-driven content renderer with marked.js
         state.data = jsyaml.load(text);
         applyConfig();
         state.sections = state.data.sections || [];
-        buildSidebar();
+        buildNavbar();
         var initIdx = indexFromHash();
         if (initIdx < 0) initIdx = 0;
         renderSection(initIdx);
@@ -141,7 +150,7 @@ SPA JavaScript — YAML-driven content renderer with marked.js
   }
 
   /* ---------- Navigation Bar ---------- */
-  function buildSidebar() {
+  function buildNavbar() {
     var nav = document.getElementById('nav-bar');
     if (!nav) return;
     var wrapper = nav.parentElement;
@@ -181,6 +190,11 @@ SPA JavaScript — YAML-driven content renderer with marked.js
       wrapper.classList.toggle('show-right', s < max - 4);
     });
     nav.dispatchEvent(new Event('scroll'));
+    /* update on resize */
+    window.onresize = function(e) {
+      wrapper.classList.toggle('has-scroll', nav.scrollWidth > nav.clientWidth);
+      nav.dispatchEvent(new Event('scroll')); 
+    };
   }
 
   function updateActiveNav(clickedIdx) {
@@ -476,7 +490,7 @@ SPA JavaScript — YAML-driven content renderer with marked.js
     for (var i = 0; i < links.length; i++) {
       var link = links[i].link;
       var isPreviewable = /\.(pdf|png|jpe?g|gif|webp|svg|bmp|tiff?)$/i.test(link);
-      var attrs = 'class="btn btn-primary" href="' + escHtml(link) + '" rel="noopener"';
+      var attrs = `class="btn btn-primary ${links[i].class||''}" href="${escHtml(link)}" rel="noopener"`;
       if (isPreviewable) {
         attrs += ' data-preview="1"';
       } else {
@@ -527,6 +541,7 @@ SPA JavaScript — YAML-driven content renderer with marked.js
     }
 
     modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
   }
 
   function downloadFile() {
@@ -550,6 +565,7 @@ SPA JavaScript — YAML-driven content renderer with marked.js
     var modal = document.getElementById('preview-modal');
     document.getElementById('modal-preview').innerHTML = '';
     modal.style.display = 'none';
+    document.body.style.overflow = '';
   }
 
   /* ---------- Event Delegation ---------- */

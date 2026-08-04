@@ -33,23 +33,23 @@ sections:
       - type: highlights
         content: 
           - title: 4.9 / 5.0
-            text: Average Student Opinion Rating (SOR)
+            text: Average Student Opinion Rating
           - title: 5x
             text: Excellence in Teaching Award Nominee (2022-2026)
-          - title: 38+
-            text: Peer-Reviewed Publications & Book Sections
+          - title: 65
+            text: Publications
           - title: 14
             text: Peer-Reviewed Publications & Presentations with Caldwell Students
       - type: badges
         content:
-          - "Assistant Professor"
+          - "Alvin R. Calman Endowed Chair"
           - "CogAI Lab Founder & Director"
           - "C-STEM Labs Center Cofounder & Co-Director"
           - "Teaching & Learning Center Co-Director"
           - "Faculty Development Committee Co-Chair"
       - type: markdown
         content: |
-          Welcome to my faculty advancement portfolio. As an Assistant Professor in the Department of Computer Science & Information Systems at Caldwell University, my work is driven by a commitment to student success, mentorship, and technological innovation. In addition to teaching, I am the founder and director of the CogAI Research Laboratory focused on research in Artificial Intelligence, Human-Computer Interaction, and Computer Science Pedagogy. I am a co-founder and co-director of the C-STEM Labs interdisciplinary center for computing research, a co-director for the Teaching & Learning Center, and a co-chair of the Faculty Development Committee. 
+          Welcome to my faculty advancement portfolio. As an Assistant Professor in the Department of Computer Science & Information Systems at Caldwell University, my work is driven by a commitment to student success, mentorship, and technological innovation. I am a five-time Excellence in Teaching Award Nominee with near-perfect ratings on Student Opinion Reports (4.9/5.0), and my scholarship has been recognized by the University through a prestigious appointment as the Alvin R. Calman Endowed Chair (2025 – present). I am the founder and director of the CogAI Research Laboratory, where my work focuses on research in Artificial Intelligence, Human-Computer Interaction, and Computer Science Pedagogy. Additionally, I am a co-founder and co-director of the C-STEM Labs interdisciplinary center for computing research. Among other University service, I am a co-director for the Teaching & Learning Center, a co-chair of the Faculty Development Committee, and a perennial member of the Institutional Review Board.
           
           Please explore this portfolio website to see how my efforts in [teaching](#Teaching), [scholarship](#Scholarship), [advising](#Advising), [service](#Service), and [collegial activities](#Collegiality) intersect to build a collaborative and forward-looking academic environment.
           Please also check out [letters of support](#Support%20Letters) from my colleagues and former students.
@@ -58,6 +58,7 @@ sections:
       - type: buttons
         content:
           - title: Advancement Dossier (pdf)
+            class: pulsing
             link: material/Veksler.ApplicationforAdvancement.Fall2026.pdf
           - title: Curriculum Vitae (pdf)
             link: material/VekslerVD-CV-2026-05.pdf
@@ -65,7 +66,9 @@ sections:
         content: 
           - date: "2022 - Present"
             title: "Assistant Professor"
-            subtitle: "Caldwell University, Department of Computer Science & Information Systems, Caldwell, NJ"
+            subtitle: |
+              Caldwell University, Department of Computer Science & Information Systems, Caldwell, NJ  
+              ***Alvin R. Calman Endowed Chair***
           - date: "2020 - 2022"
             title: "Adjunct Professor of Computer Science"
             subtitle: "Bloomfield College, Department of Computer Science, Bloomfield, NJ"
@@ -74,13 +77,17 @@ sections:
             subtitle: "DCS Corp (U.S. Army Research Lab, DEVCOM Analysis Center), Aberdeen, MD"
           - date: "2011 - 2014"
             title: "Post-Doctoral Research Fellow"
-            subtitle: "U.S. Air Force Research Laboratory, Human Effectiveness Directorate, WPAFB, OH"
+            subtitle: |
+              U.S. Air Force Research Laboratory, Human Effectiveness Directorate, WPAFB, OH  
+              ***National Research Council (NRC) Research Associateship***
           - date: "2009 - 2011"
             title: "Lecturer"
             subtitle: "Rensselaer Polytechnic Institute, Cognitive Science Department, Troy, NY"
           - date: "2003 - 2009"
             title: "Ph.D., Cognitive Science"
-            subtitle: Rensselaer Polytechnic Institute, Troy, NY | *Dean Harry J. Carman Fellowship recipient*
+            subtitle: |
+              Rensselaer Polytechnic Institute, Troy, NY  
+              ***Dean Harry J. Carman Fellowship***
           - date: "2003 - 2006"
             title: "M.S., Cognitive Science"
             subtitle: Rensselaer Polytechnic Institute, Troy, NY
@@ -89,7 +96,9 @@ sections:
             subtitle: "GE/RCA Licensing; American ReInsurance; Telcordia Technologies (SAIC); Freelance"
           - date: "1995 - 1999"
             title: "B.A., Computer Science & Psychology"
-            subtitle: Rutgers University, New Brunswick, NJ | *Graduated with Honors*
+            subtitle: |
+              Rutgers University, New Brunswick, NJ  
+              ***Graduated with Honors***
 
   - name: Teaching
     title: Teaching Effectiveness
@@ -456,6 +465,11 @@ sections:
             text: Grant Proposals Submitted
           - title: 5
             text: Software Projects Released
+      - type: badges
+        content:
+          - "Alvin R. Calman Endowed Chair"
+          - "CogAI Research Lab Founder & Director"
+          - "C-STEM Labs Cofounder & Co-director"
       - type: markdown
         content: |
           Scholarship, to me, extends well beyond the traditional metrics of
@@ -515,16 +529,19 @@ sections:
           Since joining the Caldwell University faculty in January 2022, I have
           maintained an active and productive research agenda that aligns with the
           above-stated philosophy and the University's expectation for faculty
-          engagement with emerging trends in Computer Science. My scholarship is
-          multifaceted, encompassing curriculum development, original research in
+          engagement with emerging trends in Computer Science. 
+          My scholarship is multifaceted, encompassing curriculum development, original research in
           Artificial Intelligence and Human-Computer Interaction, the development
           of innovative educational and research software, significant grant
           acquisition efforts, and consistent publication and presentation of my
           work at professional conferences. This commitment to scholarship not only
           facilitates my own professional growth but also directly enhances the
           academic environment for my students, providing them with opportunities
-          to participate in cutting-edge research and work with modern technological
-          tools.
+          to participate in cutting-edge research and work with modern technological tools.
+
+          My scholarship and rigorous research program were recognized by the
+          University, culminating in the prestigious award and my appointment
+          as the **Alvin R. Calman Endowed Chair** in May 2025.
       - type: markdown
         title: Curriculum Development
         content: |
@@ -670,7 +687,7 @@ sections:
         content:
           - Teaching & Learning Center Co-Director
           - Faculty Development Committee Co-Chair
-          - IRB Member
+          - Institutional Review Board Member
           - Advisor for 3 student clubs
           - 5 Faculty Search Committees (1 Co-Chair)
           - Teaching Assistant coordinator
@@ -821,3 +838,19 @@ sections:
       #     - title: Sangit Manandhar
       #       link: material/lettersOfSupport/LoS-SangitManandhar-for-VladVeksler.pdf
 
+
+style: |
+  @keyframes pulse {
+    40% {
+      transform: none;
+    }
+    50% {
+      transform: scale(1.04);
+    }
+    60% {
+      transform: none;
+    }
+  }
+  .pulsing {
+    animation: pulse 5s ease-in-out infinite;
+  }
