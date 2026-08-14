@@ -818,6 +818,8 @@ sections:
             link: material/lettersOfSupport/LoS-TraciBitondo-for-VladVeksler.pdf
           - title: Victoria Swanson
             link: material/lettersOfSupport/LoS-VictoriaSwanson-for-VladVeksler.pdf
+          - title: Jennifer Noonan
+            link: material/lettersOfSupport/LoS-JenniferNoonan-for-VladVeksler.pdf
       #     - title: Cagla Yildirim
       #       link: material/lettersOfSupport/LoS-CaglaYildirim-for-VladVeksler.pdf
       #     - title: Kate Solomon
@@ -852,5 +854,5 @@ style: |
     }
   }
   .pulsing {
-    animation: pulse 5s ease-in-out infinite;
+    animation: pulse 3s ease-in-out infinite;
   }

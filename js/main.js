@@ -318,7 +318,7 @@ Author: V. D. Veksler
     }
   }
 
-  function initSlideshow(slideshow) {
+  function initSlideshow_OLD(slideshow) {
     var track = slideshow.querySelector('.slideshow-track');
     var dots = slideshow.querySelectorAll('.slideshow-dot');
     var total = dots.length;
@@ -346,6 +346,86 @@ Author: V. D. Veksler
 
     /* Auto-advance every 5 seconds */
     setInterval(function () { goTo(current + 1); }, 5000);
+  }
+
+  function initSlideshow(slideshow) {
+    var track = slideshow.querySelector('.slideshow-track');
+    var dots = slideshow.querySelectorAll('.slideshow-dot');
+    var total = dots.length;
+    if (total === 0) return;
+
+    /* Detect portrait vs landscape for each image */
+    var frames = track.querySelectorAll('.slideshow-frame');
+    frames.forEach(function (frame) {
+      initPhotoBars(frame);
+    });
+
+    if (total <= 1) return;
+
+    /* Mark as interactive so CSS can apply pointer cursor */
+    slideshow.classList.add('is-interactive');    
+
+    var current = 0;
+    var timer = null;
+
+    function goTo(index) {
+      current = (index + total) % total;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach(function (d, i) {
+        d.classList.toggle('active', i === current);
+      });
+      resetTimer(); // Reset auto-advance countdown when slide changes
+    }
+
+    function resetTimer() {
+      if (timer) clearInterval(timer);
+      timer = setInterval(function () { goTo(current + 1); }, 5000);
+    }
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function (e) { 
+        e.stopPropagation();
+        goTo(i); 
+      });
+    });
+
+    /* ---------- Pointer & Swipe Event Listeners ---------- */
+    var startX = null;
+    var startY = null;
+    var swipeThreshold = 30; // Minimum distance (px) to register as a swipe
+
+    slideshow.addEventListener('pointerdown', function (e) {
+      startX = e.clientX;
+      startY = e.clientY;
+    });
+
+    document.body.addEventListener('pointerup', function (e) {
+      /* Ignore clicks directly on pagination dots */
+      if (e.target.closest('.slideshow-dots')) return;
+      if (startX===null) return;
+
+      var diffX = startX - e.clientX;
+      var diffY = startY - e.clientY;
+      startX=null;
+
+      // Triggered if horizontal drag distance is greater than vertical drag & past threshold
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
+        if (diffX > 0) {
+          goTo(current + 1); /* Swiped Left -> Go Next */
+        } else {
+          goTo(current - 1); /* Swiped Right -> Go Previous */
+        }
+        return;
+      }
+
+      // Triggered on mouse click without drag
+      if (e.pointerType === 'mouse' && Math.abs(diffX) < 10 && Math.abs(diffY) < 10) {
+        goTo(current + 1); /* Click -> Go Next */
+      }
+    });
+
+    /* Initial timer setup */
+    resetTimer();
   }
 
   /* ---------- Auto-Scroll Quote Container ---------- */
