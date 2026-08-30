@@ -9,7 +9,7 @@
 
 site-name: Faculty Advancement Portfolio | V.D. Veksler
 
-logo: assets/caldwell-university.png
+logo: content/images/caldwell-university.png
 logo-alt: Caldwell University
 
 title: Vladislav D. Veksler, Ph.D.
@@ -29,17 +29,17 @@ sections:
     content:
       - type: photos
         content:
-          - photos/me in front of Werner Hall.JPG
+          - content/images/me in front of Werner Hall.JPG
       - type: highlights
         content: 
           - title: 4.9 / 5.0
-            text: Average Student Opinion Rating
+            subtitle: Average Student Opinion Rating
           - title: 5x
-            text: Excellence in Teaching Award Nominee (2022-2026)
+            subtitle: Excellence in Teaching Award Nominee (2022-2026)
           - title: 65
-            text: Publications
+            subtitle: Publications
           - title: 14
-            text: Peer-Reviewed Publications & Presentations with Caldwell Students
+            subtitle: Peer-Reviewed Publications & Presentations with Caldwell Students
       - type: badges
         content:
           - "Alvin R. Calman Endowed Chair"
@@ -59,10 +59,11 @@ sections:
         content:
           - title: Advancement Dossier (pdf)
             class: pulsing
-            link: material/Veksler.ApplicationforAdvancement.Fall2026.pdf
+            link: content/Veksler.ApplicationforAdvancement.Fall2026.pdf
           - title: Curriculum Vitae (pdf)
-            link: material/VekslerVD-CV-2026-05.pdf
+            link: content/VekslerVD-CV-2026-05.pdf
       - type: timeline
+        title: Career Timeline
         content: 
           - date: "2022 - Present"
             title: "Assistant Professor"
@@ -106,19 +107,19 @@ sections:
     content: 
       - type: photos
         content:
-          - photos/me with 5 students in lab.JPG
-          - photos/me teaching - writing on whiteboard.JPG
-          - photos/me teaching.JPG
+          - content/images/me with 5 students in lab.JPG
+          - content/images/me teaching - writing on whiteboard.JPG
+          - content/images/me teaching.JPG
       - type: highlights
         content: 
           - title: 4.9 / 5.0
-            text: Average Student Opinion Rating (SOR) Across All Courses
+            subtitle: Average Student Opinion Rating (SOR) Across All Courses
           - title: 5x
-            text: Excellence in Teaching Award Nominee (2022-2026)
+            subtitle: Excellence in Teaching Award Nominee (2022-2026)
           - title: 13
-            text: Distinct CS Courses Taught (100-400 Level)
+            subtitle: Distinct CS Courses Taught (100-400 Level)
           - title: 9
-            text: Semesters with Voluntary Overload
+            subtitle: Semesters with Voluntary Overload
       - type: markdown
         content: |
           I have two primary goals in teaching. The first is to inspire a passion
@@ -202,18 +203,18 @@ sections:
         content: My teaching success is further evidenced by exceptional student engagement and near-perfect Student Opinion Report (SOR) ratings, which average **4.9 out of 5.0** across all courses. Additionally, students frequently go beyond the syllabus requirements to ask complex questions, reflecting a deep interest in the material. My commitment to student success is a common theme in their feedback, as seen in the representative student comments below.
       - type: buttons
         content:
-          - text: Student Opinion Reports (pdf)
-            link: material/SORs-all-with_comments.pdf
+          - title: Student Opinion Reports (pdf)
+            link: content/SORs-all-with_comments.pdf
       - type: links
-        title: Sample Student "Thank You" Emails
+        title: Sample Letters of Appreciation for my Teaching
         subtitle: Anonymized to protect student identity.
         content:
           - title: Student 1 (anonymized)
-            link: material/emails/teaching%20effectiveness/from_students/student-ty-email-1.pdf
+            link: content/emails/teaching effectiveness/from_students/student-ty-email-1.pdf
           - title: Student 2 (anonymized)
-            link: material/emails/teaching%20effectiveness/from_students/student-ty-email-2.pdf
+            link: content/emails/teaching effectiveness/from_students/student-ty-email-2.pdf
           - title: Student 3 (anonymized)
-            link: material/emails/teaching%20effectiveness/from_students/student-ty-email-3.pdf
+            link: content/emails/teaching effectiveness/from_students/student-ty-email-3.pdf
       - type: quotes
         title: Student Quotes
         max-height: 10   # height of content item (in letter-size)
@@ -254,15 +255,15 @@ sections:
       - type: links
         content: 
           - title: Excellence in Teaching Award Nomination Letter 2022
-            link: material/emails/teaching effectiveness/teaching_excellence_award/teaching award nominee 2022.pdf
+            link: content/emails/teaching effectiveness/teaching_excellence_award/teaching award nominee 2022.pdf
           - title: Excellence in Teaching Award Nomination Letter 2023
-            link: material/emails/teaching effectiveness/teaching_excellence_award/teaching award nominee 2023.pdf
+            link: content/emails/teaching effectiveness/teaching_excellence_award/teaching award nominee 2023.pdf
           - title: Excellence in Teaching Award Nomination Letter 2024
-            link: material/emails/teaching effectiveness/teaching_excellence_award/teaching award nominee 2024.pdf
+            link: content/emails/teaching effectiveness/teaching_excellence_award/teaching award nominee 2024.pdf
           - title: Excellence in Teaching Award Nomination Letter 2025
-            link: material/emails/teaching effectiveness/teaching_excellence_award/teaching award nominee 2025.pdf
+            link: content/emails/teaching effectiveness/teaching_excellence_award/teaching award nominee 2025.pdf
           - title: Excellence in Teaching Award Nomination Letter 2026
-            link: material/emails/teaching effectiveness/teaching_excellence_award/teaching award nominee 2026.pdf
+            link: content/emails/teaching effectiveness/teaching_excellence_award/teaching award nominee 2026.pdf
       - type: markdown
         title: Courses Taught at Caldwell
         content: |
@@ -270,7 +271,7 @@ sections:
           I have taken on voluntary overload every full academic year that I have taught at Caldwell University, as well as several large (30+) student sections.
           - CS 195 Computer Programming I: Fall 2022, Fall 2023, Fall 2024, Fall 2025
           - CS 196 Computer Programming II: Spring 2022, Spring 2023, Spring 2024, Spring 2025, Spring 2026
-          - CS 197 Computer Programming Accelerated: Spring 2025
+          - CS 197 Computer Programming Accelerated: Fall 2024, Spring 2025
           - CS 219 Business Spreadsheets: Spring 2022
           - CS 230 Front-End Web Development: Fall 2022, Fall 2023, Fall 2024
           - CS 240 Windows Programming: Summer 2024
@@ -292,30 +293,31 @@ sections:
     content:
       - type: photos
         randomize: true
+        seconds-per-photo: 3.5
         content: 
-          - photos/student building robots for robocup.jpg
-          - photos/president Senese at robocup competition.jpg
-          - photos/keepa presenting poster to big crowd at conference.jpg
-          - photos/me with samarpan when he won best research award.jpg
-          - photos/me with students who won best presentation awards 2023.jpg
-          - photos/my students presenting demo to president Senese.jpg
-          - photos/nathan presenting a poster.jpg
-          - photos/my students presenting their UIUX research.jpg
-          - photos/samarpan presenting poster at conference.jpg
+          - content/images/student building robots for robocup.jpg
+          - content/images/president Senese at robocup competition.jpg
+          - content/images/keepa presenting poster to big crowd at conference.jpg
+          - content/images/me with samarpan when he won best research award.jpg
+          - content/images/me with students who won best presentation awards 2023.jpg
+          - content/images/my students presenting demo to president Senese.jpg
+          - content/images/nathan presenting a poster.jpg
+          - content/images/my students presenting their UIUX research.jpg
+          - content/images/samarpan presenting poster at conference.jpg
       - type: highlights
         content:
           - title: 14
-            text: Peer-Reviewed Publications & Presentations with Caldwell Students
+            subtitle: Peer-Reviewed Publications & Presentations with Caldwell Students
           - title: 8
-            text: Top student award prizes at intercollegiate competitions
+            subtitle: Top student award prizes at intercollegiate competitions
           - title: 38
-            text: Caldwell Research Day Student Presentations
+            subtitle: Caldwell Research Day Student Presentations
           - title: 4
-            text: Honors Thesis Projects Advised
+            subtitle: Honors Thesis Projects Advised
           - title: 40-50+
-            text: Advisees Annually (CS, CIS, Marketing)
+            subtitle: Advisees Annually (CS, CIS, Marketing)
           - title: 150-200
-            text: Recommendation Letters Written Since 2022
+            subtitle: Recommendation Letters Written Since 2022
       - type: markdown
         content: |
           Since joining the Caldwell University faculty in January 2022, I have
@@ -363,6 +365,25 @@ sections:
           By fostering these extracurricular opportunities and maintaining an
           open-door policy, I aim to create a supportive environment that prepares
           students to become well-rounded, career-ready professionals.
+      - type: links
+        title: Sample Letters of Appreciation for my Mentorship and Support
+        content:
+          - title: Student 1 (anonymized)
+            link: content/emails/advising/advising-ty-1.pdf
+          - title: Student 2 (anonymized)
+            link: content/emails/advising/advising-ty-2.pdf
+          - title: Student 3 (anonymized)
+            link: content/emails/advising/advising-ty-3.pdf
+          - title: Student 4 (anonymized)
+            link: content/emails/advising/advising-ty-4.pdf
+          - title: Student 5 (anonymized)
+            link: content/emails/advising/advising-ty-5.pdf
+          - title: Student 6 (anonymized)
+            link: content/emails/advising/advising-ty-6.pdf
+          - title: Student 7 (anonymized)
+            link: content/emails/advising/advising-ty-7.pdf
+          - title: Student 8 (anonymized)
+            link: content/emails/advising/advising-ty-8.pdf
       - type: markdown
         title: Student-Coauthored Peer-Reviewed Publications and Presentations (student names in bold)
         content: |
@@ -425,7 +446,7 @@ sections:
           * Prince Mensah, Christian Severin (2025). Comparative Analysis of UINL and HTML/CSS in Web-based Application Development.
           * Krenjila Sharma (2025). Plagiarism detection in Computer Programming assignments using behavior tracking.
           * Sujan Thapa (2025). Enhancing College Information Systems Using Retrieval-Augmented Generation.
-          * Brendan Barbosa, Suman Bista, Eric Ortega, Bivek Kadle, Resha Chettry, Brendan Barbosa (2025). Mindful Motion software demo.
+          * Suman Bista, Eric Ortega, Bivek Kadle, Resha Chettry, Brendan Barbosa (2025). Mindful Motion software demo.
           * Hrizu Bhattarai, Ishaq Ansari, Ayush Upreti, Eyad Ahmad, Prince Mensah (2025). Momentum (A Mental Health Social Media demo).
           * Ajay Rayamaj, Anjuli KC, Pralosh Rajbhandari, Sangit Manandhar, Anurag Poudyal (2025). Fearch: Search Smarter, Not Harder.
           * Kris Lara, Sneha Dutt, Giorgi Gogitidze, Shadip Khadka, Rishikesh Yadav (2025). Realtor AI software suite demo.
@@ -451,20 +472,20 @@ sections:
     content: 
       - type: photos
         content:
-          - photos/me-presenting-3.jpg
-          - photos/me-presenting-1.jpg
-          - photos/me-presenting-4.jpg
-          - photos/me-presenting-2.jpg
+          - content/images/me-presenting-3.jpg
+          - content/images/me-presenting-1.jpg
+          - content/images/me-presenting-4.jpg
+          - content/images/me-presenting-2.jpg
       - type: highlights
         content:
           - title: 18
-            text: Peer-Reviewed Publications & Presentations since Jan 2022
+            subtitle: Peer-Reviewed Publications & Presentations since Jan 2022
           - title: 10
-            text: Courses Developed at Caldwell
+            subtitle: Courses Developed at Caldwell
           - title: 22
-            text: Grant Proposals Submitted
+            subtitle: Grant Proposals Submitted
           - title: 5
-            text: Software Projects Released
+            subtitle: Software Projects Released
       - type: badges
         content:
           - "Alvin R. Calman Endowed Chair"
@@ -597,7 +618,7 @@ sections:
             - PI: Faculty Development Grant for funding an intercollegiate coding competition at Caldwell
               - Grant awarded ($2,000), but had to withdraw candidacy due to event scheduling issues
             - CO-PI: NSF RITEL grant proposal exploratory work
-            - Several meetings with M\&Q for discussion of potential grant proposals
+            - Several meetings with M&Q for discussion of potential grant proposals
           - 2024-2025
             - PI: CAREER: Simplification and Standardization of Graphical User Interface Development (whitepaper)
             - Proposal for new equipment and services for C-STEM laboratories from Caldwell University HSI-STEM grant
@@ -626,39 +647,39 @@ sections:
         content: |
           - Generative AI in Education talk — Assumption College for Sisters, Morris Catholic High School (2024-12-04)
           - Caldwell University AI Workshop Series (2023-2024) — lead introductory workshop, helped organize and promote
-          - AI in Education talk — Principles Round Table for local principals and superintendents (2023-12-01)
+          - AI in Education talk — Principals Round Table for local principals and superintendents (2023-12-01)
           - Generative AI in Education — Lacordaire Academy, Montclair, NJ (2024-01-12)
       - type: markdown
         title: Software Development (since date of appointment; Jan 2022)
         content: |
-          * Veksler, V. D. (2026). ReRead.js \- open source JavaScript library for editing text patterns in a more readable and maintainable way than standard regular expressions, with the ability to import from and export to regular expression code; add comments and break up the pattern into multiple lines; create custom named tokens for common and/or complex patterns.  
+          * Veksler, V. D. (2026). ReRead.js - open source JavaScript library for editing text patterns in a more readable and maintainable way than standard regular expressions, with the ability to import from and export to regular expression code; add comments and break up the pattern into multiple lines; create custom named tokens for common and/or complex patterns.  
             https://rereadjs.github.io/  
-              \- v1.0 released Apr 2026  
-          * Veksler, V. D. & Veksler, B. Z. (2025). LectureTest \- Secure examination software with lockdown mode, real time observation, and data analysis features. Enables special question types for Computer Programming courses (coding blocks, 1D and 2D Parsons problems).  
+              - v1.0 released Apr 2026  
+          * Veksler, V. D. & Veksler, B. Z. (2025). LectureTest - Secure examination software with lockdown mode, real time observation, and data analysis features. Enables special question types for Computer Programming courses (coding blocks, 1D and 2D Parsons problems).  
             https://lecturedot.github.io/LectureTest  
-              \- v0.1 (beta) released Mar 2025, tested in one course (70 students)  
-              \- v0.1 tested across 5 sections with 3 instructors  
-              \- v0.2 released Apr 2026  
+              - v0.1 (beta) released Mar 2025, tested in one course (70 students)  
+              - v0.1 tested across 5 sections with 3 instructors  
+              - v0.2 released Apr 2026  
               (140+ users registered)  
-          * Veksler, V. D. (2024). LectureAssign \- Visual Studio Code extension aimed at preventing plagiarism and streamlining programming assignment creation and submission for Computer Science courses.  
+          * Veksler, V. D. (2024). LectureAssign - Visual Studio Code extension aimed at preventing plagiarism and streamlining programming assignment creation and submission for Computer Science courses.  
             https://marketplace.visualstudio.com/items?itemName=LectureDot.lecture-assign  
-              \- v0.1 (beta) released Jan 2024, tested in one course  
-              \- v0.2 released Aug 2024, tested with two faculty across several sections  
+              - v0.1 (beta) released Jan 2024, tested in one course  
+              - v0.2 released Aug 2024, tested with two faculty across several sections  
               (200+ installs on VSCode marketplace)  
-          * Veksler, V. D. (2023). LectureSeats \- web application aimed at fast attendance taking with multi-factor proof of attendance (QR or passcode, geolocation, photo, seat code).  
+          * Veksler, V. D. (2023). LectureSeats - web application aimed at fast attendance taking with multi-factor proof of attendance (QR or passcode, geolocation, photo, seat code).  
             https://caldwelllectureseats.github.io/  
-              \- v0.1 (beta) released Aug 2023, tested in four courses  
-              \- v0.2 released Jan 2024, currently being used by multiple faculty members at Caldwell University in Business, Psychology, and Computer Science  
-              \- v1.0 release in Aug 2025\.  
+              - v0.1 (beta) released Aug 2023, tested in four courses  
+              - v0.2 released Jan 2024, currently being used by multiple faculty members at Caldwell University in Business, Psychology, and Computer Science  
+              - v1.0 release in Aug 2025\.  
               (500+ users registered)  
-          * Veksler, V. D. (2023). u1js \- front-end JavaScript library for cross-language cross-protocol widget display and event capture using the UINL user-interface language.   
+          * Veksler, V. D. (2023). u1js - front-end JavaScript library for cross-language cross-protocol widget display and event capture using the UINL user-interface language.   
             https://uinl.github.io/u1js/  
-              \- v0.1 (beta) released Mar 2023  
+              - v0.1 (beta) released Mar 2023  
       - type: markdown
         title: Peer-Reviewed Papers & Presentations (since date of appointment; Jan 2022)
         content: |
           * Veksler, V. D. (2026). ReRead Text Pattern Editor for Open-Ended and Coding Questions. Journal of Computing Sciences in Colleges, 41(8), 273-280. https://dl.acm.org/doi/10.5555/3820586.3820618
-          * G., Jinlei, F., Yujie, & Veksler, V. D. (2026). Hybrid-Line Remanufacturing Process Optimization for Multi-Type Factories with Twin Delayed Deep Deterministic Policy Gradient Algorithm. International Journal of Artificial Intelligence and Green Manufacturing (IJAIGM), 2(1).   
+          * Gu, J., Feng, Y., & Veksler, V. D. (2026). Hybrid-Line Remanufacturing Process Optimization for Multi-Type Factories with Twin Delayed Deep Deterministic Policy Gradient Algorithm. International Journal of Artificial Intelligence and Green Manufacturing (IJAIGM), 2(1).   
           * Poudel, S. & Veksler, V. D. (2026). Beyond Accuracy: A LIME-Based Comparative Analysis of Custom CNN and Pretrained ResNet50 for Lung Cancer CT Classification. 30th annual conference of the Consortium for Computing Sciences in Colleges, Northeastern Region (CCSCNE). Northampton, MA.  
           * Regmi, S., & Veksler, V. D. (2026). Facial Expression Recognition and Response with Tension Mapping and LLM-Assisted Dialogue. 30th annual conference of the Consortium for Computing Sciences in Colleges, Northeastern Region (CCSCNE). Northampton, MA.  
           * Khadka, A., & Veksler, V. D. (2026). Robo-Advisors and the Investor Experience. 30th annual conference of the Consortium for Computing Sciences in Colleges, Northeastern Region (CCSCNE). Northampton, MA.  
@@ -673,7 +694,7 @@ sections:
           * Khatri, K., Khadka, S., & Veksler, V. D. (2024). ML for Plagiarism Detection in Coding Assignments. 28th annual conference of the Consortium for Computing Sciences in Colleges, Northeastern Region (CCSCNE). Albany, NY.  
           * Gogitidze, G. & Veksler, V. D. (2024). Using a GPT with Reinforcement Learning for More Personalized or Targeted Text Generation. 28th annual conference of the Consortium for Computing Sciences in Colleges, Northeastern Region (CCSCNE). Albany, NY.  
           * Cassenti, D. N., Veksler, V. D., & Ritter, F. E. (2023). Editor’s Review and Introduction: Cognition-Inspired Artificial Intelligence. Topics in Cognitive Science. https://doi.org/10.1111/tops.12622  
-          * Veksler, V. D., Gedenidze, N. & Yadav R. (2023). Visual cortex doesn't change, why should convolutional layers? 16th International Conference on Brain Informatics (BI 2023). Hoboken, NJ.  
+          * Veksler, V. D., Gedenidze, N., & Yadav, R. (2023). Visual cortex doesn't change, why should convolutional layers? 16th International Conference on Brain Informatics (BI 2023). Hoboken, NJ.  
           * Gedenidze, N. & Veksler, V. D. (2023). Backpropagation is expensive. Is it necessary? 27th annual conference of the Consortium for Computing Sciences in Colleges, Northeastern Region (CCSCNE). Ithaca, NY.
 
   - name: Service
@@ -682,7 +703,7 @@ sections:
     content: 
       - type: photos
         content:
-          - photos/graduation-colleagues-1.jpg
+          - content/images/graduation-colleagues-1.jpg
       - type: badges
         content:
           - Teaching & Learning Center Co-Director
@@ -742,6 +763,10 @@ sections:
     title: Collegiality & Professional Collaboration
     subtitle: Fostering interdisciplinary collaboration, faculty mentorship, technical advisement, and campus community engagement.
     content:
+      - type: photos
+        randomize: true
+        content: 
+          - content/images/sbcs faculty and staff.jpg
       - type: badges
         content:
           - Interdisciplinary Center Recruitment
@@ -768,9 +793,10 @@ sections:
           It is difficult to recount all instances of collegiality during my time
           at Caldwell University, and no list will fully capture the subtle passing
           moments of collegial expression that I strive to integrate into my
-          everyday interactions with colleagues. However, the list below may serve
-          as a worthwhile sample of the types of activities that I engage in as a
-          member of the Caldwell community:
+          everyday interactions with colleagues. However, the list below — 
+          along with the [Letters of Support](#Support%20Letters) provided by my colleagues —
+          serves as a representative sample of my ongoing engagement with and dedication to the Caldwell community.
+
       - type: markdown
         title: Mentoring & Colleague Support
         content: |
@@ -815,30 +841,28 @@ sections:
         title: Letters of Support from Caldwell Colleagues
         content: 
           - title: Traci Bitondo
-            link: material/lettersOfSupport/LoS-TraciBitondo-for-VladVeksler.pdf
+            link: content/lettersOfSupport/LoS-TraciBitondo-for-VladVeksler.pdf
           - title: Victoria Swanson
-            link: material/lettersOfSupport/LoS-VictoriaSwanson-for-VladVeksler.pdf
+            link: content/lettersOfSupport/LoS-VictoriaSwanson-for-VladVeksler.pdf
           - title: Jennifer Noonan
-            link: material/lettersOfSupport/LoS-JenniferNoonan-for-VladVeksler.pdf
+            link: content/lettersOfSupport/LoS-JenniferNoonan-for-VladVeksler.pdf
           - title: Kate Solomon
-            link: material/lettersOfSupport/LoS-KateSolomon-for-VladVeksler.pdf
-      #     - title: Cagla Yildirim
-      #       link: material/lettersOfSupport/LoS-CaglaYildirim-for-VladVeksler.pdf
-      #     - title: Sal Ferraro
-      #       link: material/lettersOfSupport/LoS-SalFerraro-for-VladVeksler.pdf
+            link: content/lettersOfSupport/LoS-KateSolomon-for-VladVeksler.pdf
+          - title: Cagla Yildirim
+            link: content/lettersOfSupport/LoS-CaglaYildirim-for-VladVeksler.pdf
       #     - title: Lily Tsoi
-      #       link: material/lettersOfSupport/LoS-LilyTsoi-for-VladVeksler.pdf
+      #       link: content/lettersOfSupport/LoS-LilyTsoi-for-VladVeksler.pdf
       - type: links
         title: Letters of Support from Former Students
         content: 
           - title: Jannice Salazar
-            link: material/lettersOfSupport/LoS-JanniceSalazar-for-VladVeksler.pdf
+            link: content/lettersOfSupport/LoS-JanniceSalazar-for-VladVeksler.pdf
           - title: Nathan Ayele
-            link: material/lettersOfSupport/LoS-NathanAyele-for-VladVeksler.pdf
+            link: content/lettersOfSupport/LoS-NathanAyele-for-VladVeksler.pdf
       #     - title: Vidur Khanal
-      #       link: material/lettersOfSupport/LoS-VidurKhanal-for-VladVeksler.pdf
+      #       link: content/lettersOfSupport/LoS-VidurKhanal-for-VladVeksler.pdf
       #     - title: Sangit Manandhar
-      #       link: material/lettersOfSupport/LoS-SangitManandhar-for-VladVeksler.pdf
+      #       link: content/lettersOfSupport/LoS-SangitManandhar-for-VladVeksler.pdf
 
 
 style: |

@@ -103,7 +103,7 @@ img {
   gap: 2rem;
 }
 
-.sidebar-logo {
+.header-logo {
   height: 46px;
   width: auto;
   object-fit: contain;
@@ -116,7 +116,7 @@ img {
 
 
 
-.sidebar-name {
+.header-title {
   color: var(--text-white);
   font-size: 1.25rem;
   font-weight: 700;
@@ -210,23 +210,6 @@ img {
   opacity: 1;
 }
 
-/* ---------- Hamburger Toggle ---------- */
-.nav-toggle {
-  display: none;
-  background: none;
-  border: 1px solid var(--dark-border);
-  border-radius: var(--radius-md);
-  color: var(--text-white);
-  font-size: 1.4rem;
-  line-height: 1;
-  padding: 0.35rem 0.6rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.nav-toggle:hover {
-  background-color: var(--caldwell-red);
-}
 
 /* ---------- Main Content ---------- */
 #app {
@@ -625,26 +608,6 @@ img {
   margin-bottom: 32px;
 }
 
-.link-card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-md);
-  padding: 18px 20px;
-  box-shadow: var(--shadow-sm);
-}
-
-.link-card h3 {
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: var(--text-main);
-  margin-bottom: 6px;
-}
-
-.link-card p {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  margin-bottom: 12px;
-}
 
 /* ---------- Vertical Link List ---------- */
 .link-list {
@@ -805,7 +768,6 @@ img {
 .content-text ul,
 .content-text ol {
   margin-left: 1.5em;
-  /* margin-bottom: 12px; */
 }
 
 .content-text li {
@@ -921,7 +883,7 @@ img {
     gap: 0.1rem;
   }
 
-  .sidebar-logo {
+  .header-logo {
     padding: 3px 0;
     margin: 0;
     display: block;
@@ -931,13 +893,7 @@ img {
     text-align: center;
   }
 
-  /* Nav: single horizontal scrollable row below brand */
-  .nav-toggle {
-    display: none;
-  }
-
   .nav-bar a {
-    /* padding: 0.4rem 0.6rem; */
     font-size: 0.7rem;
   }
 

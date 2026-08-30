@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- 
+YAML-driven content renderer
+Author: V. D. Veksler
+This code is released under GNU GENERAL PUBLIC LICENSE, 
+  which means you can copy and reuse it for your own purposes.
+Change content inside the content/ folder to make it your own.
+-->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +20,9 @@
     <header class="header">
       <div class="header-container">
         <div class="header-brand" onclick="location='#'" style="cursor: pointer;">
-          <img class="sidebar-logo" data-bind="logo" alt="">
+          <img class="header-logo" data-bind="logo" alt="">
           <div class="brand-text">
-            <span class="sidebar-name" data-bind="title"></span>
+            <span class="header-title" data-bind="title"></span>
             <p data-bind="subtitle"></p>
           </div>
         </div>

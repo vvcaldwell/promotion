@@ -1,10 +1,22 @@
 'use strict';
 
 /* ==========================================================================
-Faculty Advancement Portfolio
 YAML-driven content renderer
 Author: V. D. Veksler
+This code is released under GNU GENERAL PUBLIC LICENSE, 
+  which means you can copy and reuse it for your own purposes.
+Change content inside the content/ folder to make it your own.
 ========================================================================== */
+
+const WHERE_TO_LOOK_FOR_CONTENT = [
+  'content/content.yaml', 'content.yaml',
+  'content/content.yaml', 'content.yaml' // look again, just in case
+];
+
+const NEXT_IMAGE_TIME = 5000; // 5sec to next image in image carousels
+const WAIT_TO_RESTART_SCROLLING = 1000; // when auto-scrolling, wait 1s at bottom before jumping back up
+const SWIPE_THRESHOLD = 30; // Minimum distance (px) to register as a swipe
+
 
 (function () {
 
@@ -38,11 +50,6 @@ Author: V. D. Veksler
     return state.data || {};
   }
 
-  function getLabel(key) {
-    var labels = state.data.Labels || {};
-    return labels[key] || '';
-  }
-
   /* ---------- Apply Config to Page ---------- */
   function applyConfig() {
     var cfg = getConfig();
@@ -64,7 +71,7 @@ Author: V. D. Veksler
     }
 
     /* Site Header */
-    var logo = document.querySelector('.sidebar-logo');
+    var logo = document.querySelector('.header-logo');
     if (logo && cfg.logo) {
       logo.src = cfg.logo;
       logo.alt = cfg['logo alt'] || cfg['logo-alt'] || '';
@@ -92,21 +99,15 @@ Author: V. D. Veksler
     /* Loading label */
     var loadingEl = document.querySelector('[data-bind="loading"]');
     if (loadingEl) {
-      loadingEl.textContent = getLabel('loading') || 'Loading portfolio…';
+      loadingEl.textContent = 'Loading content…';
     }
   }
 
-  /* ---------- YAML Filename (configurable via ?yaml=file.yaml) ---------- */
-  function getYamlFilename() {
-    var params = new URLSearchParams(window.location.search);
-    var yamlFile = params.get('yaml');
-    if (yamlFile) return yamlFile;
-    return 'content.yaml';
-  }
-
   /* ---------- YAML Fetch & Parse ---------- */
-  function loadYAML() {
-    return fetch(getYamlFilename())
+  function loadYAML(paths) {
+    if (!paths) paths=[...WHERE_TO_LOOK_FOR_CONTENT];
+    const path = paths.shift();
+    return fetch(path)
       .then(function (r) {
         if (!r.ok) throw new Error('HTTP ' + r.status);
         return r.text();
@@ -123,13 +124,17 @@ Author: V. D. Veksler
         if (loading) loading.style.display = 'none';
       })
       .catch(function (err) {
+        if (paths.length) {
+          loadYAML(paths);
+          return;
+        }
         var loading = document.getElementById('loading');
         if (loading) {
           loading.innerHTML =
-            '<p style="color:var(--caldwell-red)">' + escHtml(getLabel('loadError') || 'Failed to load portfolio data.') + '</p>' +
+            '<p style="color:var(--caldwell-red)">' + escHtml('Failed to load data.') + '</p>' +
             '<p style="font-size:0.85rem;color:var(--text-muted)">' + escHtml(err.message) + '</p>';
         } else {
-          console.error('Failed to load portfolio data:', err.message);
+          console.error('Failed to load data:', err.message);
         }
       });
   }
@@ -236,14 +241,14 @@ Author: V. D. Veksler
       for (var i = 0; i < sec.content.length; i++) {
         var block = sec.content[i];
         switch (block.type) {
-          case 'photos':   html += buildSlideshow(block.content, block.randomize); break;
+          case 'photos':   html += buildSlideshow(block); break;
           case 'badges':   html += renderBadges(block.content); break;
           case 'highlights': html += renderHighlights(block.content); break;
           case 'markdown': html += renderMarkdownBlock(block); break;
           case 'buttons':  html += renderButtons(block); break;
           case 'links':    html += renderLinks(block); break;
           case 'quotes':   html += renderQuotes(block); break;
-          case 'timeline': html += renderTimeline(block.content); break;
+          case 'timeline': html += renderTimeline(block); break;
         }
       }
     }
@@ -264,18 +269,19 @@ Author: V. D. Veksler
   }
 
   /* ---------- Slideshow ---------- */
-  function buildSlideshow(photoPaths, randomize) {
-    if (randomize) {
-      for (var i = photoPaths.length - 1; i > 0; i--) {
+  function buildSlideshow(block) {
+    const imagePaths = block.content;
+    if (block.randomize) {
+      for (var i = imagePaths.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
-        var tmp = photoPaths[i];
-        photoPaths[i] = photoPaths[j];
-        photoPaths[j] = tmp;
+        var tmp = imagePaths[i];
+        imagePaths[i] = imagePaths[j];
+        imagePaths[j] = tmp;
       }
     }
-    var html = '<div class="slideshow">';
+    var html = `<div class="slideshow"${block['seconds-per-photo']?` data-seconds-per-photo="${block['seconds-per-photo']}"`:''}>`;
     html += '<div class="slideshow-track">';
-    photoPaths.forEach(function (path) {
+    imagePaths.forEach(function (path) {
       html += '<div class="slideshow-frame">';
       html += '<div class="slideshow-bar slideshow-bar-left"></div>';
       html += '<img class="slideshow-photo" src="' + escHtml(path) + '" alt="">';
@@ -285,7 +291,7 @@ Author: V. D. Veksler
     html += '</div>';
     html += '<div class="slideshow-dots">';
     let first=true;
-    photoPaths.forEach(function () {
+    imagePaths.forEach(function () {
       html += `<button class="slideshow-dot${first?' active':''}" aria-label="Go to photo"></button>`;
       first = false;
     });
@@ -318,39 +324,10 @@ Author: V. D. Veksler
     }
   }
 
-  function initSlideshow_OLD(slideshow) {
-    var track = slideshow.querySelector('.slideshow-track');
-    var dots = slideshow.querySelectorAll('.slideshow-dot');
-    var total = dots.length;
-    if (total === 0) return;
-
-    /* Detect portrait vs landscape for each image */
-    var frames = track.querySelectorAll('.slideshow-frame');
-    frames.forEach(function (frame) {
-      initPhotoBars(frame);
-    });
-
-    var current = 0;
-
-    function goTo(index) {
-      current = (index + total) % total;
-      track.style.transform = 'translateX(-' + (current * 100) + '%)';
-      dots.forEach(function (d, i) {
-        d.classList.toggle('active', i === current);
-      });
-    }
-
-    dots.forEach(function (dot, i) {
-      dot.addEventListener('click', function () { goTo(i); });
-    });
-
-    /* Auto-advance every 5 seconds */
-    setInterval(function () { goTo(current + 1); }, 5000);
-  }
-
   function initSlideshow(slideshow) {
-    var track = slideshow.querySelector('.slideshow-track');
-    var dots = slideshow.querySelectorAll('.slideshow-dot');
+    const track = slideshow.querySelector('.slideshow-track');
+    const dots = slideshow.querySelectorAll('.slideshow-dot');
+    const photoTimeout = Number(slideshow.dataset.secondsPerPhoto*1000) || NEXT_IMAGE_TIME;
     var total = dots.length;
     if (total === 0) return;
 
@@ -379,7 +356,7 @@ Author: V. D. Veksler
 
     function resetTimer() {
       if (timer) clearInterval(timer);
-      timer = setInterval(function () { goTo(current + 1); }, 5000);
+      timer = setInterval(function () { goTo(current + 1); }, photoTimeout);
     }
 
     dots.forEach(function (dot, i) {
@@ -392,7 +369,6 @@ Author: V. D. Veksler
     /* ---------- Pointer & Swipe Event Listeners ---------- */
     var startX = null;
     var startY = null;
-    var swipeThreshold = 30; // Minimum distance (px) to register as a swipe
 
     slideshow.addEventListener('pointerdown', function (e) {
       startX = e.clientX;
@@ -409,7 +385,7 @@ Author: V. D. Veksler
       startX=null;
 
       // Triggered if horizontal drag distance is greater than vertical drag & past threshold
-      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > SWIPE_THRESHOLD) {
         if (diffX > 0) {
           goTo(current + 1); /* Swiped Left -> Go Next */
         } else {
@@ -455,7 +431,7 @@ Author: V. D. Veksler
         /* If user scrolled away from bottom, cancel end-pause */
         if (container.scrollTop < scrollDist - 1) {
           endPauseStart = 0;
-        } else if (ts - endPauseStart >= 1000) {
+        } else if (ts - endPauseStart >= WAIT_TO_RESTART_SCROLLING) {
           /* Done waiting — jump to top and resume scrolling */
           container.scrollTop = 0;
           pauseStart = ts;
@@ -533,7 +509,7 @@ Author: V. D. Veksler
     for (var i = 0; i < items.length; i++) {
       html += '<div class="metric-card">' +
         '<div class="metric-number">' + escHtml(items[i].title) + '</div>' +
-        '<div class="metric-label">' + renderMarkdown(items[i].text) + '</div>' +
+        '<div class="metric-label">' + renderMarkdown(items[i].subtitle) + '</div>' +
         '</div>';
     }
     return html + '</div>';
@@ -559,6 +535,11 @@ Author: V. D. Veksler
     return html + '</div>';
   }
 
+  /* ---------- File Preview Detection ---------- */
+  function isPreviewableFile(filePath) {
+    return /\.(pdf|png|jpe?g|gif|webp|svg|bmp|tiff?)$/i.test(filePath);
+  }
+
   /* ---------- Buttons ---------- */
   function renderButtons(block) {
     var html = '<div class="content-section">';
@@ -569,14 +550,14 @@ Author: V. D. Veksler
     var links = block.content;
     for (var i = 0; i < links.length; i++) {
       var link = links[i].link;
-      var isPreviewable = /\.(pdf|png|jpe?g|gif|webp|svg|bmp|tiff?)$/i.test(link);
+      var isPreviewable = isPreviewableFile(link);
       var attrs = `class="btn btn-primary ${links[i].class||''}" href="${escHtml(link)}" rel="noopener"`;
       if (isPreviewable) {
         attrs += ' data-preview="1"';
       } else {
         attrs += ' target="_blank"';
       }
-      html += '<a ' + attrs + '>' + escHtml(links[i].text || links[i].title) + '</a>';
+      html += '<a ' + attrs + '>' + escHtml(links[i].title) + '</a>';
     }
     return html + '</div></div>';
   }
@@ -591,7 +572,7 @@ Author: V. D. Veksler
     var links = block.content;
     for (var i = 0; i < links.length; i++) {
       var link = links[i].link;
-      var isPreviewable = /\.(pdf|png|jpe?g|gif|webp|svg|bmp|tiff?)$/i.test(link);
+      var isPreviewable = isPreviewableFile(link);
       var attrs = 'href="' + escHtml(link) + '" rel="noopener"';
       if (isPreviewable) {
         attrs += ' class="link-list-item" data-preview="1"';
@@ -669,7 +650,9 @@ Author: V. D. Veksler
   /* ---------- Quote Cards ---------- */
   function renderQuotes(block) {
     var html = '<div class="content-section">';
-    html += '<h2 class="block-title">' + escHtml(block.title) + '</h2>';
+    if (block.title) {
+      html += '<h2 class="block-title">' + escHtml(block.title) + '</h2>';
+    }
     var maxHeight = block['max-height'];
     var autoScroll = block['auto-scroll'];
     if (maxHeight) {
@@ -694,9 +677,13 @@ Author: V. D. Veksler
   }
 
   /* ---------- Timeline ---------- */
-  function renderTimeline(items) {
-    var html = '<div class="content-section timeline"><h2>' +
-      escHtml(getLabel('careerTimeline') || 'Career Timeline') + '</h2><ul class="timeline-list">';
+  function renderTimeline(block) {
+    var html = '<div class="content-section timeline">';
+    if (block.title) {
+      html += '<h2 class="block-title">' + escHtml(block.title) + '</h2>';
+    }
+    html += '<ul class="timeline-list">';
+    const items = block.content;
     for (var i = 0; i < items.length; i++) {
       var item = items[i];
       html += '<li class="timeline-item">';
