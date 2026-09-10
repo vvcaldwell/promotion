@@ -840,18 +840,18 @@ sections:
       - type: links
         title: Letters of Support from Caldwell Colleagues
         content: 
-          - title: Traci Bitondo
-            link: content/lettersOfSupport/LoS-TraciBitondo-for-VladVeksler.pdf
-          - title: Victoria Swanson
-            link: content/lettersOfSupport/LoS-VictoriaSwanson-for-VladVeksler.pdf
+          - title: Cagla Yildirim
+            link: content/lettersOfSupport/LoS-CaglaYildirim-for-VladVeksler.pdf
           - title: Jennifer Noonan
             link: content/lettersOfSupport/LoS-JenniferNoonan-for-VladVeksler.pdf
           - title: Kate Solomon
             link: content/lettersOfSupport/LoS-KateSolomon-for-VladVeksler.pdf
-          - title: Cagla Yildirim
-            link: content/lettersOfSupport/LoS-CaglaYildirim-for-VladVeksler.pdf
-      #     - title: Lily Tsoi
-      #       link: content/lettersOfSupport/LoS-LilyTsoi-for-VladVeksler.pdf
+          - title: Lily Tsoi
+            link: content/lettersOfSupport/LoS-LilyTsoi-for-VladVeksler.pdf
+          - title: Traci Bitondo
+            link: content/lettersOfSupport/LoS-TraciBitondo-for-VladVeksler.pdf
+          - title: Victoria Swanson
+            link: content/lettersOfSupport/LoS-VictoriaSwanson-for-VladVeksler.pdf
       - type: links
         title: Letters of Support from Former Students
         content: 
@@ -859,10 +859,6 @@ sections:
             link: content/lettersOfSupport/LoS-JanniceSalazar-for-VladVeksler.pdf
           - title: Nathan Ayele
             link: content/lettersOfSupport/LoS-NathanAyele-for-VladVeksler.pdf
-      #     - title: Vidur Khanal
-      #       link: content/lettersOfSupport/LoS-VidurKhanal-for-VladVeksler.pdf
-      #     - title: Sangit Manandhar
-      #       link: content/lettersOfSupport/LoS-SangitManandhar-for-VladVeksler.pdf
 
 
 style: |
