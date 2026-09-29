@@ -52,7 +52,8 @@ sections:
           Welcome to my faculty advancement portfolio. As an Assistant Professor in the Department of Computer Science & Information Systems at Caldwell University, my work is driven by a commitment to student success, mentorship, and technological innovation. I am a five-time Excellence in Teaching Award Nominee with near-perfect ratings on Student Opinion Reports (4.9/5.0), and my scholarship has been recognized by the University through a prestigious appointment as the Alvin R. Calman Endowed Chair (2025 – present). I am the founder and director of the CogAI Research Laboratory, where my work focuses on research in Artificial Intelligence, Human-Computer Interaction, and Computer Science Pedagogy. Additionally, I am a co-founder and co-director of the C-STEM Labs interdisciplinary center for computing research. Among other University service, I am a co-director for the Teaching & Learning Center, a co-chair of the Faculty Development Committee, and a perennial member of the Institutional Review Board.
           
           Please explore this portfolio website to see how my efforts in [teaching](#Teaching), [scholarship](#Scholarship), [advising](#Advising), [service](#Service), and [collegial activities](#Collegiality) intersect to build a collaborative and forward-looking academic environment.
-          Please also check out [letters of support](#Support%20Letters) from my colleagues and former students.
+
+          Please check out the [Letters of Support](#Support%20Letters) page to find letters of support from my colleagues and former students, along with formal **[Chair and Dean recommendation forms](#Support%20Letters)**.
 
           Please use the buttons below to review my full application and curriculum vitae.
       - type: buttons
@@ -835,8 +836,15 @@ sections:
 
   - name: Support Letters
     title: Letters of Support
-    subtitle: Endorsements and testimonials from Caldwell faculty colleagues, staff, and alumni.
+    subtitle: Endorsements and testimonials from chair, faculty, staff, and alumni.
     content:
+      - type: links
+        title: Recommendation Form from Chair
+        content:
+          - title: Chair - Dr. Salvatore Ferraro
+            link: content/recommendationForms/Candidate Recommendation Form from Dept Chair - Ferraro for Veksler.pdf
+          # - title: Dean - Dr. Steven Kreutzer (in progress)
+          #   link: content/recommendationForms/Candidate Recommendation Form from Dean - Ferraro for Veksler.pdf
       - type: links
         title: Letters of Support from Caldwell Colleagues
         content: 
