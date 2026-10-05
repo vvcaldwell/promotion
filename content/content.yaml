@@ -836,10 +836,10 @@ sections:
 
   - name: Support Letters
     title: Letters of Support
-    subtitle: Endorsements and testimonials from chair, faculty, staff, and alumni.
+    subtitle: Endorsements and testimonials from dean, chair, faculty, staff, and alumni.
     content:
       - type: links
-        title: Recommendation Form from Chair
+        title: Recommendations from Chair and Dean
         content:
           - title: Chair - Dr. Salvatore Ferraro
             link: content/recommendationForms/Candidate Recommendation from Dept Chair - Ferraro for Veksler.pdf

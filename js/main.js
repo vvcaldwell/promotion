@@ -106,7 +106,7 @@ const SWIPE_THRESHOLD = 30; // Minimum distance (px) to register as a swipe
   /* ---------- YAML Fetch & Parse ---------- */
   function loadYAML(paths) {
     if (!paths) paths=[...WHERE_TO_LOOK_FOR_CONTENT];
-    const path = paths.shift();
+    const path = paths.shift() + '?' + new Date().toJSON().slice(0,10);
     return fetch(path)
       .then(function (r) {
         if (!r.ok) throw new Error('HTTP ' + r.status);
