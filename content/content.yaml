@@ -842,9 +842,9 @@ sections:
         title: Recommendation Form from Chair
         content:
           - title: Chair - Dr. Salvatore Ferraro
-            link: content/recommendationForms/Candidate Recommendation Form from Dept Chair - Ferraro for Veksler.pdf
-          # - title: Dean - Dr. Steven Kreutzer (in progress)
-          #   link: content/recommendationForms/Candidate Recommendation Form from Dean - Ferraro for Veksler.pdf
+            link: content/recommendationForms/Candidate Recommendation from Dept Chair - Ferraro for Veksler.pdf
+          - title: Dean - Dr. Steven Kreutzer
+            link: content/recommendationForms/Candidate Recommendation from Dean - Kreutzer for Veksler.pdf
       - type: links
         title: Letters of Support from Caldwell Colleagues
         content: 
